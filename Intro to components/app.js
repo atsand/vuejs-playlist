@@ -13,7 +13,7 @@ Vue.component('greeting', {
 });
 
 new Vue({
-    el: '#vue-app'
+    el: '#vue-app-one'
 });
 
 new Vue({
