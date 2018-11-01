@@ -1,0 +1,183 @@
+<!-- <html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorial</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Looping through lists</h1>
+            <ul>
+                <li v-for="(character,index) in characters">{{index}}.{{character}}</li>
+            </ul>
+            <ul>
+                <li v-for="(ninja, index) in ninjas">{{index}}.{{ninja.name}} - Age: {{ninja.age}}</li>
+            </ul>
+            <template v-for="(ninja, index) in ninjas">
+                <h3>{{index}}.{{ninja.name}}</h3>
+                <p>{{ninja.age}}</p>
+            </template>
+            <template v-for="ninja in ninjas">
+                <div v-for="(val,key) in ninja">{{key}} - {{val}}</div>
+            </template>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html> -->
+
+
+<!--<html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorial</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Conditionals</h1>
+            <button v-on:click="error = !error">Toggle Error</button>
+            <button v-on:click="success = !success">Toggle Success</button>
+            <p v-if="error">There has been an error</p>
+            <p v-else-if="success">Boom, Success</p>
+            <p v-show="error">There has been an error</p>
+            <p v-show="success && !error">Boom, Success</p>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html> -->
+
+<!-- <html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorial</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Dynamic CSS</h1>
+            <h2>Example 1</h2>
+            <div 
+            v-on:click="available = !available" 
+            v-bind:class="{available:available}">
+                <span>Ryu</span>
+            </div>
+            <h2>Example 2</h2>
+            <button v-on:click="nearby = !nearby">Toggle Nearby</button>
+            <button v-on:click="available = !available">Toggle Available</button>
+            <div 
+            v-on:click="available = !available" 
+            v-bind:class="compClasses">
+                <span>Ryu</span>
+                
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html> -->
+
+<!-- <html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorial</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="vue-app">
+            <button v-on:Click.once="add(1)">Add a Year</button>
+            <button v-on:Click="subtract(1)">Subtract a year</button>
+            <button v-on:dblclick="add(10)">Add 10 Years</button>
+            <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+            <p>My age is: {{age}}</p>
+            <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+            <a v-on:click.prevent="click" href="http://google.com">Google.com</a>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html> -->
+
+<!-- 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorial</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Data Binding</h1>
+            <a :href="website">NinjaSite</a>
+            <p v-html="websiteTag"></p>
+            <p>Name: {{ name }}</p>
+            <p>Job: {{ job }}</p>
+            <input type="text" :value="name"/>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>-->
+<!-- 
+<script>
+new Vue({
+    el:'#vue-app',
+    data:{
+        name:'jack',
+        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+        ninjas:[
+            {name:'Ryu', age: 25},
+            {name:'Yoshi', age: 35},
+            {name:'Ken', age: 55}
+        ],
+        job:'Ninja',
+        website: 'http://www.thenetninja.co.uk',
+        websiteTag:'<a href="http://www.thenetninja.co.uk">The Ninja Site</a>',
+        age: 20,
+        x:0,
+        y:0,
+        a:0,
+        b:0,
+        available: false,
+        nearby: false,
+        error: false,
+        success: false
+    },
+    computed:{
+        addthem: function(){
+            return this.a + this.b
+        },
+        compClasses: function(){
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
+        }
+    },
+    methods:{
+        greet: function(time){
+            return 'Good ' + time + ' ' + this.name;
+        }, 
+        add: function(x){
+            this.age += x;
+        },
+        subtract: function(x){
+            this.age -= x;
+        },
+        updateXY: function(event){
+            this.x = event.offsetX;
+            this.y = event.offsetY;
+        },
+        click: function(){
+            alert('clicked me');
+        },
+        logName: function(){
+            console.log("you entered your name");
+        },
+        logAge: function(){
+            console.log("you entered your name")
+        }
+    }
+});
+</script> -->
