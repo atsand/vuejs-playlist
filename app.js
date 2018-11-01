@@ -1,12 +1,7 @@
 new Vue({
-    el:'#vue-app',
-    data:{
-      
-    },
-    methods:{
-       
-    },
-    computed:{
-       
-    }
+    el: '#vue-app-one'
+});
+
+new Vue({
+    el: '#vue-app-two'
 });
