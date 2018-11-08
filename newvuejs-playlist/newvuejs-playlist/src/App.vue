@@ -1,7 +1,16 @@
 <template>
   <form-helper>
-    <h2 slot="slotTitle">{{ title }}</h2>
-    <p slot="slotParagraph">This is the slot paragraph</p>
+    <div slot="form-header">
+      <h3>This is the title of the form</h3>
+      <p>Information about the form</p>
+    </div>
+    <div slot="form-fields">
+      <input type="text" placeholder="username" required>
+      <input type="password" placeholder="password" required>
+    </div>
+    <div slot="form-controls">
+      <button v-on:click="handleSubmit">Submit</button>
+    </div>
   </form-helper>
 </template>
 
