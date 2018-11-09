@@ -2,17 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueRouter from 'vue-router'
+import Routes from './routes'
 
 export const bus = new Vue();
-Vue.use(VueAxios, axios)
+Vue.use(VueAxios, axios);
+Vue.use(VueRouter);
 
-//Custome Directives
-Vue.directive('rainbow', {
-  bind(el, binding, vnode){
-    el.style.color = "#" + Math.random().toString().slice(2,8);
-  }
+const router = new VueRouter({
+  routes:Routes
 });
 
+//Custome Directives
 Vue.directive('theme', {
   bind(el, binding, vnode){
     if (binding.value == 'wide'){
@@ -26,9 +27,16 @@ Vue.directive('theme', {
       el.style.padding = '20px';
     }
   }
-})
+});
+
+//Filters
+
+Vue.filter('snippet', function(value){
+  return value.slice(0,99)+"...";
+});
 
 new Vue({
   el: '#app',
-  render: h => h(App)
-})
+  render: h => h(App),
+  router:router
+});
