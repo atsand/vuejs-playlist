@@ -28,10 +28,9 @@ export default {
   created(){
       var self = this;
       this.axios
-        .get('https://jsonplaceholder.typicode.com/posts')
+        .get('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json')
         .then(function(response){
             console.log(response)
-            self.blogs = response.data.slice(0,10);
         })
   },
   filters:{

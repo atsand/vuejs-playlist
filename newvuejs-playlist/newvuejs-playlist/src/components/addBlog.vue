@@ -62,11 +62,7 @@ export default {
     post:function(){
         var self = this;
         self.axios
-        .post('https://jsonplaceholder.typicode.com/posts', {
-            title: self.blog.title,
-            body: self.blog.content,
-            userID: 1
-        })
+        .post('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json', this.blog)
         .then(function(response){
             console.log(response);
             self.submitted = true;

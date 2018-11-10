@@ -16,7 +16,7 @@ export default{
     created(){
         var self = this;
         self.axios
-        .get('http://jsonplaceholder.typicode.com/posts/' + self.id)
+        .get('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json/' + self.id)
         .then(function(result){
             console.log(result.data)
             self.blog = result.data;
