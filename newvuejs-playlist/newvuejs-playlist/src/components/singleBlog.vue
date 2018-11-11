@@ -14,12 +14,19 @@ export default{
         }
     },
     created(){
+        // this.$http.get('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json/' + this.id)
+        // .then(function(data){
+        //     return data.json();
+        // })
+        // .then(function(data){
+        //     this.blog = data;
+        // })
         var self = this;
         self.axios
-        .get('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json/' + self.id)
+        .get('https://cors-anywhere.herokuapp.com/https://nn-vue-playlist-13b5f.firebaseio.com/posts.json/' + self.id)
         .then(function(result){
-            console.log(result.data)
-            self.blog = result.data;
+            console.log(result)
+            self.blog = result;
         })
     }
 }

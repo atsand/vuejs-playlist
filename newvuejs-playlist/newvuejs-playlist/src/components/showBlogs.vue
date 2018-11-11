@@ -28,7 +28,7 @@ export default {
   },
   created(){
       var self = this;
-      this.axios
+      self.axios
         .get('https://nn-vue-playlist-13b5f.firebaseio.com/posts.json')
         .then(function(response){
             var blogsArray = [];
@@ -37,7 +37,7 @@ export default {
                 blogsArray.push(response.data[key]);
             };
             self.blogs = blogsArray;
-            console.log(blogsArray)
+            console.log(self.blogs)
         })
   },
   filters:{

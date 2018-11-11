@@ -48,7 +48,10 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   performance: {
     hints: false
